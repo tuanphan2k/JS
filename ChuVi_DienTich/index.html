@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV_DT</title>
+  <script>
+    alert("Tính chu vi và diện tích");
+    var width = prompt("Nhập vào chiều rộng: ");
+    width = parseFloat(width);
+
+    var heigh = prompt("Nhập vào chiều dài: ");
+    heigh = parseFloat(heigh);
+
+    var acreage = width*heigh;
+
+    var perimeter = (width+heigh)*2;
+    
+    alert("Chu vi hình chữ nhật là: "+perimeter);
+    alert("Diện tích hình chữ nhật là: "+acreage);
+  </script>
+</head>
+<body>
+  <pre></pre>
+  <script>
+    document.writeln("<pre>Chiều dài của hình chữ nhât: " + heigh);
+    document.writeln("Chiều rộng của hình chữ nhật: " + width);
+    document.writeln("Chu vi của hình chữ nhật là: " + perimeter);
+    document.writeln("Diện tích của hình chữ nhật là: " + acreage + "</pre>");
+  </script>
+</body>
+</html>
