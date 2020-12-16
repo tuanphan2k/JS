@@ -1,0 +1,3 @@
+__________Chapter3________________________
+
+- So sánh string và number '5' == 5 (true)

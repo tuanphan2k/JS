@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,23 @@
     var heigh = prompt("Nhập vào chiều dài: ");
     heigh = parseFloat(heigh);
 
-    var acreage = width*heigh;
+    if (!isNaN(width) && !isNaN(heigh)) {
+      if (heigh >= 0 && width >= 0) {
+        var acreage = width * heigh;
 
-    var perimeter = (width+heigh)*2;
-    
-    alert("Chu vi hình chữ nhật là: "+perimeter);
-    alert("Diện tích hình chữ nhật là: "+acreage);
+        var perimeter = (width + heigh) * 2;
+
+        alert("Chu vi hình chữ nhật là: " + perimeter);
+        alert("Diện tích hình chữ nhật là: " + acreage);
+      } else {
+        alert("Chiều dài và chiều rộng phải lớn hơn 0");
+      }
+    } else {
+      alert("Bạn cần nhập đầy đủ thông tin !");
+    }
   </script>
 </head>
+
 <body>
   <pre></pre>
   <script>
@@ -29,4 +39,5 @@
     document.writeln("Diện tích của hình chữ nhật là: " + acreage + "</pre>");
   </script>
 </body>
+
 </html>
