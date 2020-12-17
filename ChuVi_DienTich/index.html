@@ -7,26 +7,29 @@
   <title>CV_DT</title>
   <script>
     alert("Tính chu vi và diện tích");
-    var width = prompt("Nhập vào chiều rộng: ");
-    width = parseFloat(width);
+    var again = "yes";
+    do {
+      var width = prompt("Nhập vào chiều rộng: ");
+      width = parseFloat(width);
 
-    var heigh = prompt("Nhập vào chiều dài: ");
-    heigh = parseFloat(heigh);
+      var heigh = prompt("Nhập vào chiều dài: ");
+      heigh = parseFloat(heigh);
+      if (!isNaN(width) && !isNaN(heigh)) {
+        if (heigh >= 0 && width >= 0) {
+          var acreage = width * heigh;
 
-    if (!isNaN(width) && !isNaN(heigh)) {
-      if (heigh >= 0 && width >= 0) {
-        var acreage = width * heigh;
+          var perimeter = (width + heigh) * 2;
 
-        var perimeter = (width + heigh) * 2;
-
-        alert("Chu vi hình chữ nhật là: " + perimeter);
-        alert("Diện tích hình chữ nhật là: " + acreage);
+          alert("Chu vi hình chữ nhật là: " + perimeter);
+          alert("Diện tích hình chữ nhật là: " + acreage);
+        } else {
+          alert("Chiều dài và chiều rộng phải lớn hơn 0 !");
+        }
       } else {
-        alert("Chiều dài và chiều rộng phải lớn hơn 0");
+        alert("Bạn cần nhập đầy đủ thông tin !");
       }
-    } else {
-      alert("Bạn cần nhập đầy đủ thông tin !");
-    }
+      again = prompt("Nhap yes de nhap lai: ");
+    } while (again == "yes")
   </script>
 </head>
 

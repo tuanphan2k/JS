@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phân loại học sinh</title>
+  <script>
+    alert("Phân loại học sinh");
+    again = "yes";
+    do {
+      do {
+        var mark = prompt("Nhập vào điểm: ");
+        mark = parseFloat(mark);
+        if (mark < 0 || mark > 10) {
+          alert("Nhập sai điểm!");
+        }
+      } while (mark < 0 || mark > 10);
+      if (mark >= 8.5) {
+        alert("A");
+      } else if (mark >= 7) {
+        alert("B");
+      } else if (mark >= 5.5) {
+        alert("C");
+      } else if (mark >= 4) {
+        alert("D");
+      } else {
+        alert("F");
+      }
+      again = prompt("Nhap yes de tiep tuc xep loai: ");
+    } while (again == "yes");
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

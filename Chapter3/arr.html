@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var entryArr = [];
+    console.log(entryArr);
+    var numberArr = [10,20,"string",30,10];
+    var numberLength = numberArr.length;
+    for(var index = 0; index < 5; index++){
+      if(index == 0 ){
+        entryArr[index] = 5;
+      }else{
+        entryArr[index] = entryArr[index-1] +5;
+      }
+    }
+    console.log("🚀 ~ file: arr.html ~ line 13 ~ numberArr", entryArr)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
