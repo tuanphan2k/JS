@@ -4,6 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter3</title>
+  <script>
+    var entry;
+    var arrScore = [];
+    var average;
+    var total = 0;
+    var show = "Mảng vừa nhập là: ";
+    var cont;
+    do{
+      do{
+        entry = prompt("Nhập vào điểm: ");
+        entry = parseInt(entry);
+        if(entry < 0 || entry > 100) alert("Điểm số phải từ 0 - 100 !");
+      }while(entry < 0 || entry > 100)
+      
+      arrScore[arrScore.length] = entry;
+
+      cont = prompt("Nhập exit để thoát");
+    }while(cont != "exit");
+    
+    for(var i = 0;i < arrScore.length; i++){
+      total = total + arrScore[i];
+      show = show + arrScore[i] + "  ";
+    }
+    average = parseFloat(total / arrScore.length);
+    alert(show+"\nĐiểm trung bình là: " + average);
+  </script>
 </head>
 <body>
   
