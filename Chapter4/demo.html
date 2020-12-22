@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // var heigh = prompt("Nhap vao chieu dai: ");
+    // heigh = parseFloat(heigh);
+
+    // var width = prompt("Nhap vao chieu rong: ");
+    // width = parseFloat(width);
+
+    function chuVi(heigh, width) {
+      return (heigh + width) * 2;
+    }
+
+    function dienTich(heigh, width) {
+      return heigh * width;
+    }
+
+    // alert("Chu vi la: "+ chuVi(heigh, width));
+    // alert("Dien tich la: "+ dienTich(heigh, width));
+
+  </script>
+</head>
+
+<body>
+  <p>Heigh</p>
+  <input type="text" name="" id="heigh">
+  <p>Width</p>
+  <input type="text" name="" id="width">
+  <p>Dien tich</p>
+  <input type="text" name="" id="dienTich">
+  <button id="btn">Tinh</button>
+  <script>
+    var $ = function (id) {
+      return document.getElementById(id);
+    }
+
+    function tinhDienTich() {
+      var heighValue = parseFloat($("heigh").value);
+      var widthValue = parseFloat($("width").value);
+
+      var dienTichElement = $("dienTich");
+      if(!isNaN(heighValue) && !isNaN(widthValue)){
+        dienTichElement.value = heighValue*widthValue;
+      }else{
+        alert("Ban can nhap day du thong tin!");
+      }
+    }
+    var btnElement = $('btn');
+    btnElement.onclick = tinhDienTich;
+  </script>
+</body>
+
+</html>

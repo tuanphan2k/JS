@@ -1,0 +1,70 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-image: url(https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  height:100%;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.column-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column-right, .column-left{
+  height: 635px;
+}
+.logo img{
+  width: 150px;
+}
+.column-right{
+  padding-top: 11%;
+}
+.mainform{
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+  padding: 3% 10%;
+  background:rgba(190, 141, 85, 0.8);
+}
+.column-right .btn-primary{
+  border-radius: 10%;
+  width: 100px;
+  background-color: rgb(7, 30, 97);
+  border: none;
+}
+.form-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid rgb(7, 30, 97) 1px;
+}
+.form-control{
+  background: none;
+  border: none;
+}
+.form-control:focus{
+  background: none;
+  box-shadow: none;
+}
+.form-control:invalid{
+  border: solid red 1px;
+}
+h2, i{
+  color:rgb(7, 30, 97);
+  text-align: center;
+}
+.submitbtn{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn-primary:hover{
+  background-color: rgb(5, 15, 40);
+}
+.form p{
+  color: rgb(150, 20, 20);
+  font-style: italic;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/nike-512.png">
+  <script>
+    "use strict";
+    var $ = function (id) {
+      return document.getElementById(id);
+    }
+
+    function checkForm() {
+      var firstName = $("first-name").value;
+      var lastName = $("last-name").value;
+      var emailAddress = $("email").value;
+      var password = $("password1").value;
+      var rePassword = $("password2").value;
+      var isValid = true;
+
+      console.log(firstName);
+      console.log(lastName);
+      console.log(emailAddress);
+      console.log(password);
+      console.log(rePassword);
+      console.log(isValid);
+      if (firstName === "") {
+        $("first-name-sp").firstChild.nodeValue = "Required";
+        isValid = false;
+      } else {
+        $("first-name-sp").firstChild.nodeValue = "";
+      }
+
+      if (lastName === "") {
+        $("last-name-sp").firstChild.nodeValue = "Required";
+        isValid = false;
+      } else {
+        $("last-name-sp").firstChild.nodeValue = "";
+      }
+
+      if (emailAddress === "") {
+        $("email-sp").firstChild.nodeValue = "Required";
+        isValid = false;
+      } else {
+        $("email-sp").firstChild.nodeValue = "";
+      }
+
+      if (password == "") {
+        $("password1-sp").firstChild.nodeValue = "Please enter your password";
+        isValid = false;
+      } else {
+        $("password1-sp").firstChild.nodeValue = "";
+      }
+
+      if (rePassword == "") {
+        $("password2-sp").firstChild.nodeValue = "Please enter your password again";
+        isValid = false;
+      } else if (password != rePassword) {
+        $("password2-sp").firstChild.nodeValue = "That password doesn't match. Try again.";
+        console.log($("password2-sp").firstChild.nodeValue);
+        isValid = false;
+      } else {
+        $("password2-sp").firstChild.nodeValue = "";
+      }
+      if (isValid) {
+        $("register-form").submit();
+      }
+    }
+    window.onload = function(){
+      $("btn").onclick = checkForm;
+      $("register-form").focus();
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="bg-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-2">
+        </div>
+        <div class="col-xl-10">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 column-left">
+              <div class="logo">
+                <img src="https://cdn.worldvectorlogo.com/logos/nike-8.svg" alt="Logo">
+              </div>
+            </div>
+            <div class="col-xl-8 col-lg-9 column-right">
+              <div class="mainform">
+                <h2>Join Us</h2>
+                <div id="register-form" class="form">
+                  <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input id="first-name" type="text" class="form-control" placeholder="First Name" maxlength="32"
+                      pattern="[A-Za-z]{1,32}">
+                    <p id="first-name-sp">*</p>
+                  </div>
+                  <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input id="last-name" type="text" class="form-control" placeholder="Last Name" maxlength="32"
+                      pattern="[A-Za-z]{1,32}">
+                    <p id="last-name-sp">*</p>
+                  </div>
+                  <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input id="email" type="email" class="form-control" placeholder="E-mail">
+                    <p id="email-sp">*</p>
+                  </div>
+                  <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input id="password1" type="password" class="form-control" placeholder="Password">
+                    <p id="password1-sp">*</p>
+                  </div>
+                  <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input id="password2" type="password" class="form-control" placeholder="Retype Password">
+                    <p id="password2-sp">*</p>
+                  </div>
+                  <div class="submitbtn">
+                    <button id="btn" type="button" class="btn btn-primary">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

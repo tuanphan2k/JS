@@ -2,3 +2,8 @@ __________Chapter3________________________
 
 - So sánh string và number '5' == 5 (true)
 BTVN: Nhập điểm để phân loại học sinh 1F45.5C7B8.5F
+
+
+_____________________Chapter4__________________
+
+//DOM
