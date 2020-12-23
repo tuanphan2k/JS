@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  var $ = function (id) {
+    return document.getElementById(id);
+  }
+
+  function checkForm() {
+    var firstNameElement = $("first-name").value;
+    var lastNameElement = $("last-name").value;
+    var emailElement = $("email").value;
+    var passwordElement = $("password").value;
+    var retypePasswordElement = $("retype-password").value;
+    var isValid = true;
+
+    if (firstNameElement === "") {
+      $("first-name-error").firstChild.nodeValue = "Required";
+      isValid = false;
+    } else {
+      $("first-name-error").firstChild.nodeValue = "";
+    }
+
+    if (lastNameElement === "") {
+      $("last-name-error").firstChild.nodeValue = "Required";
+      isValid = false;
+    } else {
+      $("last-name-error").firstChild.nodeValue = "";
+    }
+
+    if (emailElement === "") {
+      $("email-error").firstChild.nodeValue = "Required";
+      isValid = false;
+    } else {
+      $("email-error").firstChild.nodeValue = "";
+    }
+
+    if (passwordElement === "") {
+      $("password-error").firstChild.nodeValue = "Required";
+      isValid = false;
+    } else if (passwordElement.length < 8) {
+      $("password-error").firstChild.nodeValue = "Minimum 8 character";
+      isValid = false;
+    } else {
+      $("password-error").firstChild.nodeValue = "";
+    }
+
+    if (retypePasswordElement === "") {
+      $("retype-password-error").firstChild.nodeValue = "Required";
+      isValid = false;
+    } else if (passwordElement !== retypePasswordElement) {
+      $("retype-password-error").firstChild.nodeValue = "Password don't match. Try again";
+      isValid = false;
+    } else {
+      $("retype-password-error").firstChild.nodeValue = "";
+    }
+    if (isValid) {
+      alert("Done!");
+    }
+  }
+
+  window.onload = function () {
+    $("btn").onclick = checkForm;
+  }
+
+</script>
+
+<body>
+  <h2>Register form</h2>
+  <p>First name</p>
+  <input type="text" name="" id="first-name">
+  <span id="first-name-error">*</span>
+  <p>Last name</p>
+  <input type="text" name="" id="last-name">
+  <span id="last-name-error">*</span>
+  <p>Email</p>
+  <input type="text" name="" id="email">
+  <span id="email-error">*</span>
+  <p>Password</p>
+  <input type="text" name="" id="password">
+  <span id="password-error">*</span>
+  <p>Retype Password</p>
+  <input type="text" name="" id="retype-password">
+  <span id="retype-password-error">*</span>
+  <button id="btn">Submit</button>
+</body>
+
+</html>
