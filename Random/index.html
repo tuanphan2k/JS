@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random</title>
+</head>
+<body>
+  <h2>Random</h2>
+  <p>Min number: </p>
+  <input type="number" name="" id="min">
+  <p>Max number: </p>
+  <input type="number" name="" id="max">
+  <div id="noti"></div>
+  <br>
+  <button id="btn-random">Random</button>
+  <br>
+  <p>Result</p>
+  <input type="number" name="" id="result">
+</body>
+  <script>
+    var $ = function(id) {
+      return document.getElementById(id);
+    }
+
+    function process() {
+      var minNumber = $('min');
+      var maxNumber = $('max');
+      var resultRandom = $('result');
+    
+      if(parseInt(minNumber.value) > parseInt(maxNumber.value)){
+        maxNumber.nextElementSibling.innerHTML = "Max phải lớn hơn Min !";
+      }else{
+        var result = Math.floor(Math.random() * (maxNumber.value - minNumber.value +1)) + parseInt(minNumber.value);
+        console.log(result);
+        resultRandom.value = result;
+      }
+    }
+
+    var btn = $('btn-random');
+    btn.onclick = process;
+  </script>
+</html>

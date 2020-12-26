@@ -7,3 +7,7 @@ BTVN: Nhập điểm để phân loại học sinh 1F45.5C7B8.5F
 _____________________Chapter4__________________
 
 //DOM
+
+_________Chapter7______________________
+
+BTVN: Lam random

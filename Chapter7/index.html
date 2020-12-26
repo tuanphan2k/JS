@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="name">Name event: </label>
+  <input type="text" name="name" id="name">
+  <div class="text-dange"></div>
+  <label for="date">Date event: </label>
+  <input type="date" name="date" id="date">
+  <div class="text-dange"></div>
+  <button id="submit">Submit</button>
+  <div id="result"></div>
+  <script>
+    function getCountdown(){
+      var isValid = true;
+      var eventName;
+      var nameElement = document.getElementById('name');
+      if(nameElement.value.length === 0 ){
+        nameElement.nextElementSibling.innerHTML = "Enter your event !";
+        isValid = false;
+      }else{
+        eventName = nameElement.value;
+      }
+
+      var dateElement = document.getElementById('date');
+      if (!dateElement.value){
+        dateElement.nextElementSibling.innerHTML = "Select date";
+        isValid = true;
+      }else{
+        var now = new Date();
+        var dateSelected = new Date(dateElement.value);
+        var oneDate = 24*60*60*1000;
+        var nowTime = now.getTime();
+        var dateSelected = dateSelected.getTime();
+
+        var countdownTime = Math.ceil((dateSelected - nowTime)/oneDate);
+        
+        var resultElement = document.createElement('div');
+        resultElement.innerHTML = eventName + ' event: ' + countdownTime; 
+        document.getElementById("result").appendChild(resultElement);
+      }
+    }
+    var btn = document.getElementById('submit');
+    btn.onclick = getCountdown;
+  </script>
+</body>
+</html>
