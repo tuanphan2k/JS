@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <label for="cars">Type of member: </label>
+  <select name="cars" id="member">
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select>
+  <label for="tien">Tien:</label>
+  <input type="number" name="" id="tien">
+  <label for="percent">Phần trăm giảm: </label>
+  <input type="text" name="" id="percent">
+  <label for="tong">Tổng: </label>
+  <input type="text" name="" id="tong">
+  <button id="btn">btn</button>
+  <script>
+    var $ = function (id) {
+      return document.getElementById(id);
+    }
+
+    function process() {
+      var memberElement = $('member').value;
+      var tienElement = $('tien').value;
+      tienElement = parseFloat(tienElement);
+      var tongElement = $('tong');
+      var percentElement = $('percent');
+      switch (memberElement) {
+        case 'gold':
+          if (!isNaN(tienElement)) {
+            if (tienElement > 200000) {
+              percentElement.value = '20%';
+              tongElement.value = (tienElement - Math.floor(tienElement * 0.2)).toLocaleString();
+            } else if (tienElement > 100000 && tienElement < 200000) {
+              percentElement.value = '15%';
+              tongElement.value = tienElement - Math.floor(tienElement * 0.15).toLocaleString();
+            } else {
+              percentElement.value = '10%';
+              tongElement.value = tienElement - Math.floor(tienElement * 0.1).toLocaleString();
+            }
+          }
+          break;
+        case 'silver':
+          if (!isNaN(tienElement)) {
+            if (tienElement > 100000) {
+              percentElement.value = '10%';
+              tongElement.value = (tienElement - Math.floor(tienElement * 0.1)).toLocaleString();
+            } else {
+              percentElement.value = '5%';
+              tongElement.value = (tienElement - Math.floor(tienElement * 0.05)).toLocaleString();
+            }
+          }
+          break;
+        case 'bronze':
+          if (!isNaN(tienElement)) {
+            if (tienElement > 100000) {
+              percentElement.value = '5%';
+              tongElement.value = (tienElement - Math.floor(tienElement * 0.05)).toLocaleString();
+            } else {
+              percentElement.value = '0%';
+              tongElement.value = tienElement.toLocaleString();
+            }
+          }
+          break;
+      }
+
+    }
+    var btn = $('btn');
+    btn.onclick = process;
+  </script>
+</body>
+
+</html>

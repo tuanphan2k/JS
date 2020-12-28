@@ -11,3 +11,7 @@ _____________________Chapter4__________________
 _________Chapter7______________________
 
 BTVN: Lam random
+
+_________Chapter8____________
+// How to use the AND and OR operators for selections
+    var selected = (state === "CA" || state === "NC");

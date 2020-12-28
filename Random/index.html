@@ -27,10 +27,14 @@
       var minNumber = $('min');
       var maxNumber = $('max');
       var resultRandom = $('result');
-    
-      if(parseInt(minNumber.value) > parseInt(maxNumber.value)){
-        maxNumber.nextElementSibling.innerHTML = "Max phải lớn hơn Min !";
-      }else{
+      
+      if(isNaN(parseInt(minNumber.value)) || isNaN(parseInt(maxNumber.value))){
+        maxNumber.nextElementSibling.innerHTML  = "Nhập vào Max và min!";
+      }else if(parseInt(minNumber.value) >= parseInt(maxNumber.value)){
+        maxNumber.nextElementSibling.innerHTML = "";
+        maxNumber.nextElementSibling.innerHTML = "Max phải lớn hơn Min!";
+      }else {
+        maxNumber.nextElementSibling.innerHTML = "";
         var result = Math.floor(Math.random() * (maxNumber.value - minNumber.value +1)) + parseInt(minNumber.value);
         console.log(result);
         resultRandom.value = result;
