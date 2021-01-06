@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>To do List</h2>
+    <input type="text" name="" id="note">
+    <button id="btnAdd" onclick="addTask()">Add</button>
+    <div id="showNote"></div>
+  </div>
+  <script>
+    var toDoList = [];
+    var renderTask = function(toDoList){
+      var noteElement = document.getElementById('note');
+      var list = "";
+        toDoList.forEach(function (item, index) {
+          list = list + `<div> ${item} <a href = '#' onclick = 'removeTask(${index})'>Xoa</a> </div>`;
+        })
+        document.getElementById('showNote').innerHTML = list;
+    }
+    var addTask = function () {
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+      var noteElement = document.getElementById('note');
+      if (noteElement.value.length <= 0) {
+        window.alert('Trong r');
+      } else {
+        toDoList.unshift(noteElement.value);
+        localStorage.setItem('toDoList',JSON.stringify(toDoList));
+        var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+        renderTask(toDoList);
+        noteElement.value = " ";
+      }
+    }
+    var removeTask = function (index) {
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+      toDoList.splice(index, 1);
+      localStorage.setItem('toDoList',JSON.stringify(toDoList));
+      renderTask(toDoList);
+    }
+    renderTask(JSON.parse(localStorage.getItem('toDoList')));
+  </script>
+</body>
+
+</html>

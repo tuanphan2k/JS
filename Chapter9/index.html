@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [3,1,2,6,4,5];
+    var text= '';
+    arr.forEach(function(item,index){
+      text += item + '-';
+    })
+    console.log(text)
+    var isHave =   arr.some(function(item) {
+      return item > 5;
+    })
+    console.log("🚀 ~ file: index.html ~ line 22 ~ isHave ~ isHave", isHave)
+
+    var arrx2 = arr.map(function(item, index) {
+      return item*2;
+    });
+    console.log("🚀 ~ file: index.html ~ line 24 ~ arrx2 ~ arrx2", arrx2)
+    
+    var arrx3 = arr.filter(function(item, index) {
+      return item >= 3;
+    });
+    console.log("🚀 ~ file: index.html ~ line 29 ~ arrx2 ~ arrx2", arrx3)
+    
+    course = {
+      name: 'JS',
+      time: '8 month'
+    }
+
+    var parseJSON =  JSON.stringify(course);
+    console.log("🚀 ~ file: index.html ~ line 37 ~ parseJSON", parseJSON)
+    
+    localStorage.setItem('course', course)
+    </script>
+</body>
+</html>

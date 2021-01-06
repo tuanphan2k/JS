@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-    var emailKey = 'email';
-    var myInfo = {
-      name : 'Son Dang',
-      age: 18,
-      address: 'Quang Nam,VN',
-      [emailKey]: 'tuan@gmail.com'
-    }
-    var myKey = 'address'
-    console.log(myInfo)
-    console.log(myInfo[myKey])
-
+    var keyword = 'PHP';
+    var strings = 
+      ['Javascript', 'PHP', 'Học PHP']
+    var newString = strings.filter(function(item) {
+      return item.indexOf(keyword) != -1;
+    })
+    console.log(newString);
   </script>
 </head>
+
 <body>
-  
+
 </body>
+
 </html>

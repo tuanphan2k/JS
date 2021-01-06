@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>To do list</h2>
+  <input type="text" name="" id="note">
+  <span></span>
+  <button onclick="addTask()">Add</button>
+  <div id="list"></div>
+  <script>
+    var toDoList = [];
+    function renderToDoList(toDoList) {
+      var list = "";
+      toDoList.forEach(function (item, index) {
+        list = list + `<div>${item}<a href ='#' onclick = 'removeTask(${index})'>Xóa</a></div>`;
+      });
+      document.getElementById('list').innerHTML = list;
+    }
+    function addTask() {
+      var nameElement = document.getElementById("note");
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+      if (nameElement.value.length > 0) {
+        toDoList.unshift(nameElement.value);
+        localStorage.setItem("toDoList", JSON.stringify(toDoList));
+        renderToDoList(toDoList);
+        nameElement.value = "";
+      } else {
+        nameElement.nextElementSibling.innerHTML = "Bạn cần nhập tên task !";
+      }
+    }
+    function removeTask(index) {
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || []
+      toDoList.splice(index, 1);
+      localStorage.setItem('toDoList',JSON.stringify(toDoList))
+      renderToDoList(toDoList);
+    }
+    renderToDoList(JSON.parse(localStorage.getItem('toDoList')) || [])
+  </script>
+</body>
+
+</html>
