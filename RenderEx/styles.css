@@ -1,0 +1,127 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+*{
+  box-sizing: border-box;
+}
+.navi{
+  height: 54px;
+  box-shadow:3px 6px 10px rgba(0, 0, 0, 0.1) ;
+  padding: 0px 10px;
+}
+.nav-item{
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 0px;
+  display: inline-block;
+  width: 120px;
+  color: black;
+  height: 54px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0px;
+}
+.nav-content{
+  /* display: flex; */
+  font-size: 110%;
+  padding: 10px 0px;
+}
+.nav-list{
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+}
+.nav-list a:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  text-decoration: none;
+}
+.drop-menu{
+  position: relative;
+}
+.drop-item{
+  position: absolute;
+  display: none;
+  list-style-type: none;
+  padding: 0px;
+  z-index: 999;
+}
+.drop-menu:hover .drop-item{
+  display: block;
+  background-color: white;
+}
+.drop-menu:hover .item-drop{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: aqua 1px solid;
+}
+.nav-item-shadow{
+  box-shadow:3px 6px 10px rgba(0, 0, 0, 0.1) ;
+}
+.product-img{
+  position: relative;
+}
+.product-img img{
+  width: 100%;
+  height: 150px;
+}
+.productlist{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  z-index: 998;
+}
+.background{
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  left: 0;
+  z-index: 997;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.containerr{
+  margin-top: 15px;
+}
+.card-position{
+  position: relative;
+}
+.new{
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  background-color: #ff0000;
+  color: white;
+  padding: 0px 8px;
+}
+.footer{
+  position: relative;
+  margin-top: 15px;
+  height: 150px;
+  background-color: rgba(250, 246, 246, 0.808);
+}
+.footer-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.column-fix{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.nav-mobile{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+  .nav-mobile{
+    display: block;
+  }
+  .nav-item{
+    display: none;
+  }
+  .nav-pc{
+    display: none;
+  }
+}
+

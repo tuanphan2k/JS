@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="d-flex justify-content-between navi">
+      <div class="nav-content">
+        <b class="nav-pc"> Brand Name </b>
+        <div class="nav-mobile">
+          <i class="fas fa-bars"></i>
+          &nbsp;&nbsp;
+          <b> Brand Name </b>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-item" href=""> Home</a>
+          </li>
+          <li class="drop-menu">
+            <a class="nav-item item-drop" href="">Products</a>
+            <ul class="drop-item">
+              <li><a class="nav-item" href="">Products A</a></li>
+              <li><a class="nav-item" href="">Products B</a></li>
+              <li><a class="nav-item nav-item-shadow" href="">Products C</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-item" href="">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-content" id="user-info"><b> Username</b></div>
+    </nav>
+  </div>
+  <div class="product-img">
+    <img src="https://via.placeholder.com/1920x150" alt="">
+    <b class="productlist">Product list</b>
+    <div class="background"></div>
+  </div>
+  <div class="container containerr ">
+    <div class="row  d-flex flex-lg-row flex-sm-column-reverse">
+      <div class="col-lg-3 col-sm-12 column-fix">
+        <ul class="list-group" id="list-group">
+          
+        </ul>
+      </div>
+      <div class="col-lg-9 col-sm-12">
+        <div class="row" id="list-products">
+         <!-- function renderProducts JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <b class="footer-text">This is Footer</b>
+  </div>
+  <script>
+    //user data
+    var userData = {
+      fullName: "Phan Quốc Tuấn",
+      address: "iViettech",
+    };
+
+    // products data array
+    var products = [
+      {
+        id: 1,
+        name: "iPhone 12 mini",
+        price: 19000000,
+        image: 'https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/i/p/iphone-12-mini-blue-select-2020_4.png',
+        status: 'NEW'
+      },
+      {
+        id: 2,
+        name: "iPhone 12",
+        price: 23000000,
+        image:'https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-iphone-12-mini-2.png',
+        status:''
+      },
+      {
+        id: 3,
+        name: "iPhone 12 Pro",
+        price: 30000000,
+        image:'https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/p/h/photo_2020-10-13_22-12-24.jpg_1.png',
+        status:'Freeship'
+      },
+      {
+        id: 4,
+        name: "iPhone 12 Pro Max",
+        price: 33000000,
+        image:'https://cdn.cellphones.com.vn/media/catalog/product/p/h/photo_2020-10-13_22-12-24.jpg_1_2_1_1.png',
+        status:''
+      },
+      {
+        id: 5,
+        name: "Macbook Air 13 inch M1",
+        price: 26000000,
+        image:'https://cdn.cellphones.com.vn/media/catalog/product/m/a/macbook-air-gold-select-201810_4_1.jpg',
+        status:''
+      },
+      {
+        id: 6,
+        name: "Macbook Pro 13 inch M1",
+        price: 35000000,
+        image:'https://cdn.cellphones.com.vn/media/catalog/product/m/b/mbp-silver-select-202011.jpg',
+        status:''
+      },
+    ];
+    // categories data
+    var categories = [
+      {
+        name : 'iPhone',
+        url : 'https://www.apple.com/iphone/'
+      },
+      {
+        name : 'iPad',
+        url : 'https://www.apple.com/ipad/'
+      },
+      {
+        name : 'Mac',
+        url : 'https://www.apple.com/mac/'
+      },
+      {
+        name : 'Watch',
+        url : 'https://www.apple.com/watch/'
+      }
+    ]
+    function renderProduct() {
+      var listProducts = '';
+      products.forEach(function (item) {
+        listProducts = listProducts +
+          `
+          <div class="col-lg-4 col-md-6 col-sm-6 column-fix">
+            <div class="card card-position" style="width: 100%;">
+              <img class="card-img-top" src="${item.image}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.price.toLocaleString()} VND</p>
+                <a href="#" class="btn btn-primary">View Detail</a>
+              </div>
+            </div>
+            <p class="new">${item.status}</p>
+          </div>
+      `
+      });
+      document.getElementById('list-products').innerHTML = listProducts;
+    }
+    function renderUserInfo(){
+      var userInfo = '';
+      document.getElementById('user-info').innerHTML = userData.fullName;
+    }
+    function renderCategories(){
+      var listCategories = '';
+      categories.forEach(function(item) {
+        listCategories = listCategories + 
+        `
+        <a class="list-group-item list-group-item-action" href="${item.url}">${item.name}</a>
+        `
+      });
+      document.getElementById('list-group').innerHTML = listCategories;
+    }
+    renderCategories();
+    renderUserInfo();
+    renderProduct();
+  </script>
+</body>
+
+</html>

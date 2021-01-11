@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+
+<body>
+  <div id="container">
+    <p id="firstName"></p>
+    <p id="lastName"></p>
+    <p id="score"></p>
+  </div>
+  <script>
+    var arr = [
+      {
+        firstName: 'Phan',
+        lastName: 'Tuan',
+        score: 7.8
+      },
+      {
+        firstName: 'Thien',
+        lastName: 'Hai',
+        score: 8.0
+      }
+    ]
+    var person = {
+      firstName: 'Phan',
+      lastName: 'Tuan',
+      score: 7.8
+    }
+
+    // function renderInfo() {
+    //   document.getElementById('container').innerHTML = 
+    //   `
+    //   <h2>${person.firstName}</h2>,
+    //   <h2>${person.lastName}</h2>,
+    //   <h2>${person.score}</h2>,
+    //   `
+    // }
+    function renderInfo() {
+      var list = '';
+      arr.forEach(function (item) {
+        list = list +
+          `
+          <h2>${item.firstName}</h2>,
+          <h2>${item.lastName}</h2>,
+          <h2>${item.score}</h2>,
+          `
+      })
+      document.getElementById('container').innerHTML = list
+    }
+    renderInfo();
+  </script>
+</body>
+
+</html>

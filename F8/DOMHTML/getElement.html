@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <ul class="parent">
+    <li>"Cày" JS DOM tại F8</li>
+    <li>"Cày" JS DOM tại F8</li>
+
+    <ul>
+      <li>"Cày" JS DOM tại F8</li>
+      <li>"Cày" JS DOM tại F8</li>
+
+      <ul>
+        <li>"Cày" JS DOM tại F8</li>
+        <li>"Cày" JS DOM tại F8</li>
+      </ul>
+    </ul>
+  </ul>
+
+  <script>
+    var listItems1 = document.querySelectorAll('.parent > li');
+    console.log("🚀 ~ file: getElement.html ~ line 29 ~ listItems1", listItems1)
+    var listItems2 = document.querySelectorAll('.parent > ul > li');
+    var listItems3 = document.querySelectorAll('.parent > li, .parent > ul > li');
+  </script>
+</body>
+
+</html>
