@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <img id="image" src="" width="500px" height="auto" alt="">
+    <button id="pre" onclick="prev()">Pre</button>
+    <button id="play" onclick="play()">Play</button>
+    <button id="pause" onclick="pause()">Pause</button>
+    <button id="next" onclick="next()">Next</button>
+  </div>
+
+  <script>
+    var imageArr = [
+      "https://via.placeholder.com/510",
+      "https://via.placeholder.com/520",
+      "https://via.placeholder.com/530",
+      "https://via.placeholder.com/540",
+      "https://via.placeholder.com/550",
+    ];
+    var index = 0;
+    var autoPlayInterval = setInterval(autoPlayImage, 2000);
+
+    function autoPlayImage() {
+      document.getElementById("image").src = imageArr[index];
+      if (index + 1 === imageArr.length) {
+        index = 0;
+      } else {
+        index = index + 1;
+      }
+    }
+
+    function next() {
+      if (index + 1 === imageArr.length) {
+        index = 0;
+      } else {
+        index = index + 1;
+      }
+      document.getElementById("image").src = imageArr[index];
+    }
+
+    function prev() {
+      if (index === 0) {
+        index = imageArr.length - 1;
+      } else {
+        index = index - 1;
+      }
+      document.getElementById("image").src = imageArr[index];
+    }
+
+    function pause() {
+      clearInterval(autoPlayInterval);
+    }
+
+    function play() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(autoPlayImage, 2000);
+    }
+
+  </script>
+</body>
+</html>
