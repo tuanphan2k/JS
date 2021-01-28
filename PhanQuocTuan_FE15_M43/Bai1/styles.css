@@ -1,0 +1,25 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+.form{
+  width: 500px;
+}
+.main-form{
+  display: flex;
+}
+.left{
+  width: 50%;
+}
+.right{
+  width: 50%;
+}
+.btn{
+  display: flex;
+}
+.btn-left{
+  width: 50%;
+}
+.btn-right{
+  width: 50%;
+}

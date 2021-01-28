@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="toggle" class="show"></div>
+  <button onclick="eventBtn()">Show/Hide</button>
+  <script>
+    function eventBtn(){
+      var toggleElement = document.getElementById('toggle');
+      if(toggleElement.className.indexOf('hide') !== -1){
+        toggleElement.classList.remove('hide');
+      }else{
+        toggleElement.classList.add('hide');
+      }
+    }
+  </script>
+</body>
+</html>

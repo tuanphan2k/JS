@@ -169,7 +169,10 @@
 
     function toggleSidebar() {
       var sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement.className.indexOf("show") !== -1) {
+      var className = sidebarElement.classList.toString();
+      console.log("🚀 ~ file: toggle-sidebar.html ~ line 173 ~ toggleSidebar ~ className", className)
+      
+      if (className.indexOf("show") !== -1) {
         sidebarElement.classList.remove("show");
       } else {
         sidebarElement.classList.add("show");

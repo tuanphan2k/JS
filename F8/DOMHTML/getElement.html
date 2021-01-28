@@ -9,26 +9,20 @@
 
 <body>
 
-  <ul class="parent">
-    <li>"Cày" JS DOM tại F8</li>
-    <li>"Cày" JS DOM tại F8</li>
+  <a href="https://f8.edu.vn/">Học lập trình</a>
 
-    <ul>
-      <li>"Cày" JS DOM tại F8</li>
-      <li>"Cày" JS DOM tại F8</li>
+  <a>Học lập trình</a>
 
-      <ul>
-        <li>"Cày" JS DOM tại F8</li>
-        <li>"Cày" JS DOM tại F8</li>
-      </ul>
-    </ul>
-  </ul>
+  <div>Lập trình Javascript</div>
 
   <script>
-    var listItems1 = document.querySelectorAll('.parent > li');
-    console.log("🚀 ~ file: getElement.html ~ line 29 ~ listItems1", listItems1)
-    var listItems2 = document.querySelectorAll('.parent > ul > li');
-    var listItems3 = document.querySelectorAll('.parent > li, .parent > ul > li');
+    var aNodeList = document.getElementsByTagName('a');
+    var f8LinkElement = aNodeList[0];
+    var f8ShortLink = f8LinkElement.getAttribute('href')
+    aNodeList[1].href = f8ShortLink;
+    var divElement = document.querySelector('div')
+    divElement.setAttribute('data-url',f8ShortLink)
+    console.log("🚀 ~ file: getElement.html ~ line 25 ~ divElement", divElement)
   </script>
 </body>
 

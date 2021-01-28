@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Management Score</title>
+</head>
+<body>
+  <div id="show"></div>
+  <div id="noti"></div>
+  <div id="concat"></div>
+  <script>
+    var n = prompt('Nhập vào số lượng học sinh: ', 5);
+    var arr = [];
+    var arr2 = [8.5,9.0,7.0]
+    function add(){
+      for(var i = 0 ; i < n ; i++){
+        arr[i] = parseInt(prompt(`Nhập vào điểm của sinh viên thứ ${i +1} : `));
+      }
+    }
+    function show(){
+      var list = '';
+      var newArr = arr;
+      newArr.forEach(function(item,index){
+        list = list + `<div>Điểm của sinh viên thứ ${index + 1} là: ${item}<\div>`
+      })
+      document.getElementById('show').innerHTML = list;
+    }
+    function noti(){
+      var count = 0;
+      for(var i = 0; i< n; i++){
+        if(arr[i] >= 5){
+          count ++;
+        }
+      }
+      var list = `Số sinh viên có điểm lớn hơn hoặc bằng 5 là: ${count}`
+      document.getElementById('noti').innerHTML = list
+    }
+    function concatArr(){
+      var list = '<div>Sau khi nối mảng: <\div>';
+      var newConcat = arr.concat(arr2);
+      console.log(newConcat)
+      var newSort = newConcat.sort();
+      console.log(newSort)
+      var newReverse = newSort.reverse();
+      newReverse.forEach(function(item,index){
+        list = list + `<div>Điểm của sinh viên thứ ${index + 1} là: ${item}<\div>`
+      })
+      document.getElementById('concat').innerHTML = list;
+    }
+    add();
+    show();
+    noti();
+    concatArr();
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form">
+      <label for="amount">Tổng số hộp bánh: </label><br>
+      <input type="number" name="" id="amount"><br>
+      <span id="amount-er"></span>
+      <label for="gift">Số hộp bánh được tặng: </label><br>
+      <input type="number" name="" id="gift"><br>
+      <span id="gift-er"></span>
+      <label for="tax">Thuế</label><br>
+      <input type="number" value="10" name="" id="tax"><br>
+      <span id="tax-er"></span>
+      <label for="total">Thành tiền: </label><br>
+      <input type="text" name="" id="total"><br>
+      <span id=""></span>
+      <button id="btn" onclick="process()">Tính</button><br>
+    </div>
+  </div>
+</body>
+<script>
+  var $ = function (id) {
+    return document.getElementById(id);
+  }
+  function process() {
+    var amountElement = $('amount').value;
+    var giftElement = $('gift').value;
+    var taxElement = $('tax').value;
+    var isValid = true;
+    if (amountElement.length == 0 || amountElement <= 0) {
+      $('amount-er').innerHTML = "Nhập lại số hộp <br>"
+      isValid = false;
+    }
+    if (giftElement.length == 0 || giftElement < 0) {
+      $('gift-er').innerHTML = "Nhập lại số hộp được tặng <br>"
+      isValid = false;
+    }else if (giftElement >= amountElement) {
+      $('gift-er').innerHTML = "Số hộp được tặng phải nhỏ hơn số hộp <br>"
+      isValid = false;
+    }
+    if (isValid) {
+      if (amountElement > 100) {
+        $('total').value = ((amountElement - giftElement) * 40000 +
+         ((amountElement - giftElement) * 40000) * taxElement / 100).toLocaleString()
+      } else if (amountElement > 50) {
+        $('total').value = ((amountElement - giftElement) * 45000 +
+         ((amountElement - giftElement) * 45000) * taxElement / 100).toLocaleString()
+      } else {
+        $('total').value = ((amountElement - giftElement) * 50000 +
+         ((amountElement - giftElement) * 50000) * taxElement / 100).toLocaleString()
+      }
+    }
+  }
+
+</script>
+
+</html>

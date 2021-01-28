@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="show"></div>
+  <div id="showCount"></div>
+  
+  <script>
+    var arr = [];
+    var count = 0;
+    var amount = prompt("Nhập vào số lượng sinh viên: ", 0);
+    for( var i = 0 ;i < amount ; i++){
+      arr[i] = parseInt(prompt(`Nhập vào sinh viên thứ ${i+1}`));
+      if(arr[i] >= 5){
+        count ++;
+      }
+    }
+    var list = '';
+    var newArr = arr;
+    newArr.forEach(function(item,index){
+      list = list + `<div>Điểm của sinh viên thứ ${index+1} là: ${item}</div>`
+    })
+    var showCount = '';
+    var showCount = `<div>Số sinh viên có điểm lơn hơn hoặc bằng 5 là: ${count} </div>`;
+    document.getElementById('show').innerHTML = list
+    document.getElementById('showCount').innerHTML = showCount;
+  </script>
+</body>
+</html>
